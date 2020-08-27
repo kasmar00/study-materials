@@ -1,5 +1,7 @@
-# study-materials
+# Study Materials
 Simple webpage for storing links to materials provided by teachers.
+
+Preview: https://kasmar00.github.io/study-materials/
 
 Each material should be encased inside an object (preferably div) with "subject" class and provided with a link (`<a></a>`) inside.
 
