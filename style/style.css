@@ -83,12 +83,13 @@ h2 {
   background-color: var(--subject);
   font-size: x-large;
   order: -1;
-  width: 70%;
+  flex-basis: calc(100vw - 3 * 41px);
   flex-grow: 1;
+  flex-shrink: 5;
   /* line-height: max(10vh, 50px); */
   /* line-height: unset; */
   padding: 10px 20px;
-  text-align: center;
+  text-align: left;
   margin-top: 0;
   /* hide second lines */
   text-overflow: ellipsis;
@@ -131,11 +132,22 @@ h2 {
   background-color: var(--subject);
   order: -1;
   width: 10%;
+  /* width: 36px; */
+  flex-basis: 41px;
   text-align: center;
   /* line-height: max(10vh, 50px); */
-  padding-top: 10px;
-  padding-bottom: 10px;
+  /* padding-top: 10px; */
+  /* padding-bottom: 10px; */
+  /* padding-right: 10px; */
   margin-top: 0;
+  flex-shrink: 0;
+}
+
+.github:not(.lecture):not(.lab):not(.classes) a,
+.drive:not(.lecture):not(.lab):not(.classes) a,
+.moodle:not(.lecture):not(.lab):not(.classes) a {
+  padding-right: 10px;
+  width: 41px;
 }
 
 a {
@@ -159,17 +171,55 @@ a {
   display: none;
 }
 
+@media (min-width: 900px) {
+  .github:not(.lecture):not(.lab):not(.classes),
+  .drive:not(.lecture):not(.lab):not(.classes),
+  .moodle:not(.lecture):not(.lab):not(.classes) {
+    background-color: initial;
+    order: 10;
+    flex-basis: 40%;
+    text-align: initial;
+    /* line-height: max(7vh, 32px); */
+    line-height: unset;
+    /* min-height: 32px; */
+    /* margin-top: max(2vh, 8px); */
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 8px;
+  }
+  .github:not(.lecture):not(.lab):not(.classes) a,
+  .drive:not(.lecture):not(.lab):not(.classes) a,
+  .moodle:not(.lecture):not(.lab):not(.classes) a {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100%;
+  }
+  .github:not(.lecture):not(.lab):not(.classes) a::before,
+  .drive:not(.lecture):not(.lab):not(.classes) a::before {
+    font-size: 20px;
+  }
+  .moodle:not(.lecture):not(.lab):not(.classes) a::before {
+    height: 20px;
+    width: 20px;
+  }
+  .github:not(.lecture):not(.lab):not(.classes) a::after,
+  .drive:not(.lecture):not(.lab):not(.classes) a::after,
+  .moodle:not(.lecture):not(.lab):not(.classes) a::after {
+    display: initial;
+  }
+}
+
 .subject > div:not(.name) {
   /* line-height: max(7vh, 32px);
   min-height: 32px; */
-  padding-bottom: 10px;
-  padding-top: 10px;
   margin-top: 8px;
   width: 40%;
   font-size: 20px;
 }
 
 .subject a {
+  padding-bottom: 10px;
+  padding-top: 10px;
   display: block;
   padding-left: 5px;
 }
@@ -230,7 +280,7 @@ a::before {
 /* Moodle icon */
 .moodle a::before {
   content: "";
-  background-image: url(moodle-icon-5.jpg);
+  background-image: url(../img/moodle-icon-5.jpg);
   height: 20px;
   width: 20px;
   box-sizing: border-box;
@@ -255,35 +305,10 @@ a::before {
     flex-direction: row;
     justify-content: space-around;
   }
-
+  .subject .name {
+    text-align: center;
+  }
   .subject > div:not(.name) {
     width: 40%;
-  }
-
-  .github:not(.lecture):not(.lab):not(.classes),
-  .drive:not(.lecture):not(.lab):not(.classes),
-  .moodle:not(.lecture):not(.lab):not(.classes) {
-    background-color: initial;
-    order: 10;
-    width: 40%;
-    text-align: initial;
-    /* line-height: max(7vh, 32px); */
-    line-height: unset;
-    /* min-height: 32px; */
-    /* margin-top: max(2vh, 8px); */
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-top: 8px;
-  }
-
-  .github:not(.lecture):not(.lab):not(.classes) a::before,
-  .drive:not(.lecture):not(.lab):not(.classes) a::before {
-    font-size: 20px;
-  }
-
-  .github:not(.lecture):not(.lab):not(.classes) a::after,
-  .drive:not(.lecture):not(.lab):not(.classes) a::after,
-  .moodle:not(.lecture):not(.lab):not(.classes) a::after {
-    display: initial;
   }
 }
