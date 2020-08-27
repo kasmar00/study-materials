@@ -1,0 +1,289 @@
+@font-face {
+  font-family: "Square Slabserif";
+  src: url("square-slabserif.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* remove whitespace on right */
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+  /* CSS HEX */
+  --blue-sapphire: #006991ff;
+  --burnt-sienna: #de6b48ff;
+  --liver: #685155ff;
+  --maximum-blue: #42bfddff;
+  --yellow-green-crayola: #dbf4a7ff;
+  --mauve: #dec1ffff;
+  /* kolory */
+  --banner: var(--blue-sapphire);
+  --subject: var(--yellow-green-crayola);
+  --lecture: var(--burnt-sienna);
+  --classes: var(--liver);
+  --lab: var(--mauve);
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  font-family: "Square Slabserif", sans-serif;
+  background-color: #006991;
+  color: white;
+  max-width: 1024px;
+  margin: auto;
+  padding-left: 30px;
+}
+h1 {
+  padding-top: 30px;
+}
+h2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1024px;
+  margin: auto;
+}
+
+.subject {
+  margin-top: 10px;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+}
+
+.subject .short {
+  display: none;
+}
+
+.subject .name {
+  /* background-color: yellowgreen; */
+  background-color: var(--subject);
+  font-size: x-large;
+  order: -1;
+  width: 70%;
+  flex-grow: 1;
+  /* line-height: max(10vh, 50px); */
+  /* line-height: unset; */
+  padding: 10px 20px;
+  text-align: center;
+  margin-top: 0;
+  /* hide second lines */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* .subject .name::first-line {
+  opacity: 0;
+} */
+
+.subject .lecture {
+  /* background-color: blue; */
+  background-color: var(--lecture);
+  /* color: white; */
+  order: 1;
+}
+
+.subject .classes {
+  /* background-color: rgb(93, 180, 176); */
+  background-color: var(--classes);
+  color: white;
+  order: 2;
+}
+
+.subject .lab {
+  /* background-color: rgb(187, 82, 187); */
+  background-color: var(--lab);
+  order: 3;
+}
+
+.subject .latex {
+  order: 5;
+}
+
+.github:not(.lecture):not(.lab):not(.classes),
+.drive:not(.lecture):not(.lab):not(.classes),
+.moodle:not(.lecture):not(.lab):not(.classes) {
+  /* background-color: yellowgreen; */
+  background-color: var(--subject);
+  order: -1;
+  width: 10%;
+  text-align: center;
+  /* line-height: max(10vh, 50px); */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+a {
+  height: 100%;
+}
+
+.github:not(.lecture):not(.lab):not(.classes) a::before,
+.drive:not(.lecture):not(.lab):not(.classes) a::before {
+  /* padding-right: 10px; */
+  font-size: x-large;
+}
+
+.moodle:not(.lecture):not(.lab):not(.classes) a::before {
+  height: 24px;
+  width: 24px;
+}
+
+.github:not(.lecture):not(.lab):not(.classes) a::after,
+.drive:not(.lecture):not(.lab):not(.classes) a::after,
+.moodle:not(.lecture):not(.lab):not(.classes) a::after {
+  display: none;
+}
+
+.subject > div:not(.name) {
+  /* line-height: max(7vh, 32px);
+  min-height: 32px; */
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 8px;
+  width: 40%;
+  font-size: 20px;
+}
+
+.subject a {
+  display: block;
+  padding-left: 5px;
+}
+
+.subject .drive a::after {
+  content: "Dysk";
+}
+.subject .github a::after {
+  content: "Github";
+}
+.subject .moodle a::after {
+  content: "Moodle";
+}
+.subject .latex a::after {
+  content: "Overleaf";
+}
+.subject .lecture a::after {
+  content: "Wykład";
+}
+.subject .classes a::after {
+  content: "Ćwiczenia";
+}
+.subject .lab a::after {
+  content: "Laby";
+}
+
+/* Icons for github and drive */
+a::before {
+  margin-left: 2px;
+  margin-right: 7px;
+}
+
+.latex a::before {
+  content: "\f12c";
+  font-family: "Font Awesome 5 Free";
+}
+.video a::before {
+  content: "\f03d";
+  font-family: "Font Awesome 5 Free";
+}
+.link a::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0ac";
+}
+.github a::before {
+  content: "\f09b";
+}
+.drive a::before {
+  content: "\f3aa";
+}
+a::before {
+  font-family: "Font Awesome 5 Brands";
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+}
+/* Moodle icon */
+.moodle a::before {
+  content: "";
+  background-image: url(moodle-icon-5.jpg);
+  height: 20px;
+  width: 20px;
+  box-sizing: border-box;
+  margin-right: 10px;
+  padding: 0;
+  background-size: cover;
+  overflow: hidden;
+}
+
+@media (min-width: 600px) {
+  .subject > div:not(.name) {
+    width: 30%;
+  }
+}
+
+@media (min-width: 900px) {
+  .subject {
+    width: 45%;
+  }
+  .wrapper {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .subject > div:not(.name) {
+    width: 40%;
+  }
+
+  .github:not(.lecture):not(.lab):not(.classes),
+  .drive:not(.lecture):not(.lab):not(.classes),
+  .moodle:not(.lecture):not(.lab):not(.classes) {
+    background-color: initial;
+    order: 10;
+    width: 40%;
+    text-align: initial;
+    /* line-height: max(7vh, 32px); */
+    line-height: unset;
+    /* min-height: 32px; */
+    /* margin-top: max(2vh, 8px); */
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 8px;
+  }
+
+  .github:not(.lecture):not(.lab):not(.classes) a::before,
+  .drive:not(.lecture):not(.lab):not(.classes) a::before {
+    font-size: 20px;
+  }
+
+  .github:not(.lecture):not(.lab):not(.classes) a::after,
+  .drive:not(.lecture):not(.lab):not(.classes) a::after,
+  .moodle:not(.lecture):not(.lab):not(.classes) a::after {
+    display: initial;
+  }
+}
