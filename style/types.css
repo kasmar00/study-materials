@@ -1,0 +1,51 @@
+.subject .latex {
+  order: 5;
+}
+
+.subject .drive a::after {
+  content: "Dysk";
+}
+.subject .github a::after {
+  content: "Github";
+}
+.subject .moodle a::after {
+  content: "Moodle";
+}
+.subject .latex a::after {
+  content: "Overleaf";
+}
+
+.latex a::before {
+  content: "\f12c";
+  font-family: "Font Awesome 5 Free";
+}
+.video a::before {
+  content: "\f03d";
+  font-family: "Font Awesome 5 Free";
+}
+.link a::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0ac";
+}
+.github a::before {
+  font-family: "Font Awesome 5 Brands";
+  content: "\f09b";
+}
+.drive a::before {
+  font-family: "Font Awesome 5 Brands";
+  content: "\f3aa";
+}
+
+/* Moodle icon */
+/* this one is a little more complicated, treat it as an example on how to add img icons */
+.moodle a::before {
+  content: "";
+  background-image: url(../img/moodle-icon-5.jpg);
+  height: 20px;
+  width: 20px;
+  box-sizing: border-box;
+  margin-right: 10px;
+  padding: 0;
+  background-size: cover;
+  overflow: hidden;
+}

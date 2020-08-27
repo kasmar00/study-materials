@@ -1,0 +1,29 @@
+.subject .lecture {
+  /* background-color: blue; */
+  background-color: var(--lecture);
+  /* color: white; */
+  order: 1;
+}
+
+.subject .classes {
+  /* background-color: rgb(93, 180, 176); */
+  background-color: var(--classes);
+  color: white;
+  order: 2;
+}
+
+.subject .lab {
+  /* background-color: rgb(187, 82, 187); */
+  background-color: var(--lab);
+  order: 3;
+}
+
+.subject .lecture a::after {
+  content: "Wykład";
+}
+.subject .classes a::after {
+  content: "Ćwiczenia";
+}
+.subject .lab a::after {
+  content: "Laby";
+}
