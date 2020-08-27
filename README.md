@@ -1,7 +1,7 @@
 # study-materials
 Simple webpage for storing links to materials provided by teachers.
 
-Each material should be encased inside an object (preferably div) with "subject" class and provided with a link (<a></a>) inside.
+Each material should be encased inside an object (preferably div) with "subject" class and provided with a link (`<a></a>`) inside.
 
 Each material can have one (or none) of currently three classes each correspoding to one form of teaching:
 - Lecture: for materials corresponding to lectures (polish: Wykład)
