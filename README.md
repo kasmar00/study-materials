@@ -1,4 +1,5 @@
 # Study Materials
+
 Simple webpage for storing links to materials provided by teachers.
 
 Preview: https://kasmar00.github.io/study-materials/
@@ -6,16 +7,19 @@ Preview: https://kasmar00.github.io/study-materials/
 Each material should be encased inside an object (preferably div) with "subject" class and provided with a link (`<a></a>`) inside.
 
 Each material can have one (or none) of currently three classes each correspoding to one form of teaching:
+
 - Lecture: for materials corresponding to lectures (polish: Wykład)
 - Classes: for materials for auditory/seminar classes (polish: Ćwiczenia)
 - Lab: for materials on laboratory/project claseses (polish: Laboratoria)
 
 Additionaly to form related classes, each material should have one (and only one) type related class:
+
 - Drive: adds Google Drive icon, for materials kept on cloud drives
 - Github: adds Github icon, for materials (ex. source code) kept on git and other repositories
 - Moodle: adds Moodle icon (an img), for materials provided by teachers on moodle and other cms systems
 - Latex: adds an icon symbolising mathematical writing (X with subscirpt 1), for latex source code on online environments (ex. Overleaf)
-- Video: adds a camera icon, for video conferences (Zoom, Teams, Big Blue Button) or video materials (Youtube, Twitch)
+- Video: adds a camera icon, for video conferences (Zoom, MS Teams, Hangouts, Big Blue Button) or video materials (Youtube, Twitch)
+- Teams: adds a group of people icon, for links to group worksapces (ex. MS Teams, Slack)
 - Link: adds a globe icon, general class for all links not covered by above classes (ex. teachers website)
 
 The above mentioned type related classes add an icon (from Font Awesome, unless otherwise stated) and a polish text corresponding to material type. The text is overturned by form related classes wich add a text consisiting of form name (in polish)
@@ -26,30 +30,56 @@ The classes are styled in css, so feel free to add extra classes for other forms
 
 Currently all subjects and materials must be added in html, but in future they may be imported from a csv file using JS.
 
-Exapmle code:
+Example code:
+
 ```html
 <div class="wrapper">
-      <div class="subject">
-        <div class="name">Metody Probabilistyczne</div>
-        <div class="short">MP</div>
-        <div class="lecture link">
-          <a href="#"></a>
-        </div>
-        <div class="classes link">
-          <a href="#"></a>
-        </div>
-        <div class="moodle classes">
-          <a href="#"></a>
-        </div>
-        <div class="latex">
-          <a href="#"></a>
-        </div>
-        <div class="drive">
-          <a href="#"></a>
-        </div>
-        <div class="github">
-          <a href="#"></a>
-        </div>
-      </div>
+  <div class="subject">
+    <div class="name">Metody Probabilistyczne</div>
+    <div class="short">MP</div>
+    <div class="lecture link">
+      <a href="#"></a>
+    </div>
+    <div class="classes link">
+      <a href="#"></a>
+    </div>
+    <div class="moodle classes">
+      <a href="#"></a>
+    </div>
+    <div class="latex">
+      <a href="#"></a>
+    </div>
+    <div class="drive">
+      <a href="#"></a>
+    </div>
+    <div class="github">
+      <a href="#"></a>
+    </div>
+  </div>
 </div>
+```
+
+Example type css:
+
+```css
+.github a::before {
+  font-family: "Font Awesome 5 Brands";
+  content: "\f09b";
+}
+.subject .github a::after {
+  content: "Github";
+}
+```
+
+Example form css:
+
+```css
+.subject .classes {
+  background-color: var(--classes);
+  color: white;
+  order: 2;
+}
+.subject .classes a::after {
+  content: "Ćwiczenia";
+}
 ```

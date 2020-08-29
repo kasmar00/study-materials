@@ -103,7 +103,7 @@ footer {
   background-color: var(--subject);
   font-size: x-large;
   order: -1;
-  flex-basis: calc(100vw - 3 * 41px);
+  flex-basis: calc(100% - 3 * 41px);
   flex-grow: 1;
   flex-shrink: 5;
   /* line-height: max(10vh, 50px); */

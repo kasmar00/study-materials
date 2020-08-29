@@ -14,6 +14,9 @@
 .subject .latex a::after {
   content: "Overleaf";
 }
+.subject .teams a::after {
+  content: "Teams";
+}
 
 .latex a::before {
   content: "\f12c";
@@ -34,6 +37,10 @@
 .drive a::before {
   font-family: "Font Awesome 5 Brands";
   content: "\f3aa";
+}
+.teams a::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0c0";
 }
 
 /* Moodle icon */
