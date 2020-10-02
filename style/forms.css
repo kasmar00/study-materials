@@ -8,7 +8,7 @@
 .subject .classes {
   /* background-color: rgb(93, 180, 176); */
   background-color: var(--classes);
-  color: white;
+  /* color: white; */
   order: 2;
 }
 
